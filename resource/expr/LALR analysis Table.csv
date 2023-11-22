@@ -1,0 +1,17 @@
+State,$,num,+,-,*,/,(,),E,T,F
+0,err,s2,err,err,err,err,s3,err,5,1,4
+1,r2,err,r2,r2,s7,s6,err,r2,err,err,err
+2,r7,err,r7,r7,r7,r7,err,r7,err,err,err
+3,err,s2,err,err,err,err,s3,err,8,1,4
+4,r5,err,r5,r5,r5,r5,err,r5,err,err,err
+5,acc,err,s10,s9,err,err,err,err,err,err,err
+6,err,s2,err,err,err,err,s3,err,err,err,11
+7,err,s2,err,err,err,err,s3,err,err,err,12
+8,err,err,s10,s9,err,err,err,s13,err,err,err
+9,err,s2,err,err,err,err,s3,err,err,14,4
+10,err,s2,err,err,err,err,s3,err,err,15,4
+11,r4,err,r4,r4,r4,r4,err,r4,err,err,err
+12,r3,err,r3,r3,r3,r3,err,r3,err,err,err
+13,r6,err,r6,r6,r6,r6,err,r6,err,err,err
+14,r1,err,r1,r1,s7,s6,err,r1,err,err,err
+15,r0,err,r0,r0,s7,s6,err,r0,err,err,err

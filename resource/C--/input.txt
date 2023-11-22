@@ -1,0 +1,10 @@
+int id ( void ) { for ( 
+int id = INTEGER comma id = INTEGER 
+; id < INTEGER ; id ++ comma 
+id ++ ) { id ( ) ; 
+unsigned long long id ; id ( STRING 
+) ; double id = FLOAT ; signed 
+short id ; } double id ; return 
+INTEGER ; } void id ( char * 
+id comma ... ) { } int id ; 
+char id comma id ; int id ; 

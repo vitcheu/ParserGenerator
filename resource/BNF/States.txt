@@ -1,0 +1,5850 @@
+
+##############<状态0>#############
+[program'->•program,[$]]
+
+--------------------------------------------
+[declaration->•declarator ';',[]]
+
+[declaration->•declarator '=' assignment_expression ';',[]]
+
+[declarator->•direct_declarator,[]]
+
+[declarator->•pointer direct_declarator,[]]
+
+[direct_declarator->•direct_declarator '[' ']',[]]
+
+[direct_declarator->•direct_declarator '[' constant_expression ']',[]]
+
+[direct_declarator->•direct_declarator comma identifier_list,[]]
+
+[direct_declarator->•type_specifier IDENTIFIER,[]]
+
+[external_declaration->•declaration,[]]
+
+[external_declaration->•function_definition,[]]
+
+[function_definition->•type_specifier IDENTIFIER '(' parameter_list ')' compound_statement,[]]
+
+[pointer->•'*' pointer,[]]
+
+[pointer->•'*',[]]
+
+[program->•external_declaration,[]]
+
+[program->•program external_declaration,[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•VOID,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+
+##############</状态0>#############
+
+##############<状态1>#############
+[program->program •external_declaration,['*', CHAR, FLOAT, $, INT, VOID]]
+
+[program'->program•,[$]]
+
+--------------------------------------------
+[declaration->•declarator ';',[]]
+
+[declaration->•declarator '=' assignment_expression ';',[]]
+
+[declarator->•direct_declarator,[]]
+
+[declarator->•pointer direct_declarator,[]]
+
+[direct_declarator->•direct_declarator '[' ']',[]]
+
+[direct_declarator->•direct_declarator '[' constant_expression ']',[]]
+
+[direct_declarator->•direct_declarator comma identifier_list,[]]
+
+[direct_declarator->•type_specifier IDENTIFIER,[]]
+
+[external_declaration->•declaration,[]]
+
+[external_declaration->•function_definition,[]]
+
+[function_definition->•type_specifier IDENTIFIER '(' parameter_list ')' compound_statement,[]]
+
+[pointer->•'*' pointer,[]]
+
+[pointer->•'*',[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•VOID,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+
+##############</状态1>#############
+
+##############<状态2>#############
+[declarator->direct_declarator•,[';', '=']]
+
+[direct_declarator->direct_declarator •'[' ']',[';', '[', comma, '=']]
+
+[direct_declarator->direct_declarator •'[' constant_expression ']',[';', '[', comma, '=']]
+
+[direct_declarator->direct_declarator •comma identifier_list,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态2>#############
+
+##############<状态3>#############
+[declarator->pointer •direct_declarator,[';', '=']]
+
+--------------------------------------------
+[direct_declarator->•direct_declarator '[' ']',[]]
+
+[direct_declarator->•type_specifier IDENTIFIER,[]]
+
+[direct_declarator->•direct_declarator '[' constant_expression ']',[]]
+
+[direct_declarator->•direct_declarator comma identifier_list,[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+[type_specifier->•VOID,[]]
+
+
+##############</状态3>#############
+
+##############<状态4>#############
+[external_declaration->declaration•,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态4>#############
+
+##############<状态5>#############
+[type_specifier->CHAR•,[IDENTIFIER]]
+
+--------------------------------------------
+
+##############</状态5>#############
+
+##############<状态6>#############
+[type_specifier->INT•,[IDENTIFIER]]
+
+--------------------------------------------
+
+##############</状态6>#############
+
+##############<状态7>#############
+[type_specifier->VOID•,[IDENTIFIER]]
+
+--------------------------------------------
+
+##############</状态7>#############
+
+##############<状态8>#############
+[pointer->'*'•,[CHAR, FLOAT, INT, VOID]]
+
+[pointer->'*' •pointer,[CHAR, FLOAT, INT, VOID]]
+
+--------------------------------------------
+[pointer->•'*' pointer,[]]
+
+[pointer->•'*',[]]
+
+
+##############</状态8>#############
+
+##############<状态9>#############
+[external_declaration->function_definition•,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态9>#############
+
+##############<状态10>#############
+[program->external_declaration•,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态10>#############
+
+##############<状态11>#############
+[type_specifier->FLOAT•,[IDENTIFIER]]
+
+--------------------------------------------
+
+##############</状态11>#############
+
+##############<状态12>#############
+[declaration->declarator •';',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[declaration->declarator •'=' assignment_expression ';',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态12>#############
+
+##############<状态13>#############
+[direct_declarator->type_specifier •IDENTIFIER,[';', '[', comma, '=']]
+
+[function_definition->type_specifier •IDENTIFIER '(' parameter_list ')' compound_statement,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态13>#############
+
+##############<状态14>#############
+[program->program external_declaration•,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态14>#############
+
+##############<状态15>#############
+[direct_declarator->direct_declarator '[' •']',[';', '[', comma, '=']]
+
+[direct_declarator->direct_declarator '[' •constant_expression ']',[';', '[', comma, '=']]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[constant_expression->•conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态15>#############
+
+##############<状态16>#############
+[direct_declarator->direct_declarator comma •identifier_list,[';', '[', comma, '=']]
+
+--------------------------------------------
+[identifier_list->•identifier_list comma IDENTIFIER,[]]
+
+[identifier_list->•IDENTIFIER,[]]
+
+
+##############</状态16>#############
+
+##############<状态17>#############
+[declarator->pointer direct_declarator•,[';', '=']]
+
+[direct_declarator->direct_declarator •'[' ']',[';', '[', comma, '=']]
+
+[direct_declarator->direct_declarator •'[' constant_expression ']',[';', '[', comma, '=']]
+
+[direct_declarator->direct_declarator •comma identifier_list,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态17>#############
+
+##############<状态18>#############
+[direct_declarator->type_specifier •IDENTIFIER,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态18>#############
+
+##############<状态19>#############
+[pointer->'*' pointer•,[CHAR, FLOAT, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态19>#############
+
+##############<状态20>#############
+[declaration->declarator ';'•,[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态20>#############
+
+##############<状态21>#############
+[declaration->declarator '=' •assignment_expression ';',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态21>#############
+
+##############<状态22>#############
+[direct_declarator->type_specifier IDENTIFIER•,[';', '[', comma, '=']]
+
+[function_definition->type_specifier IDENTIFIER •'(' parameter_list ')' compound_statement,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态22>#############
+
+##############<状态23>#############
+[inclusive_or_expression->inclusive_or_expression •',[';', '?', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+[logical_and_expression->inclusive_or_expression•,[';', '?', ')', ']', OR_OP, ':', AND_OP, comma]]
+
+--------------------------------------------
+
+##############</状态23>#############
+
+##############<状态24>#############
+[postfix_expression->postfix_expression •DEC_OP,[]]
+
+[postfix_expression->postfix_expression •'(' argument_expression_list ')',[]]
+
+[postfix_expression->postfix_expression •PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->postfix_expression •'.' IDENTIFIER,[]]
+
+[postfix_expression->postfix_expression •'[' expression ']',[]]
+
+[postfix_expression->postfix_expression •INC_OP,[]]
+
+[postfix_expression->postfix_expression •'(' ')',[]]
+
+[unary_expression->postfix_expression•,[]]
+
+--------------------------------------------
+
+##############</状态24>#############
+
+##############<状态25>#############
+[direct_declarator->direct_declarator '[' ']'•,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态25>#############
+
+##############<状态26>#############
+[and_expression->equality_expression•,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma, '&']]
+
+[equality_expression->equality_expression •NE_OP relational_expression,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[equality_expression->equality_expression •EQ_OP relational_expression,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态26>#############
+
+##############<状态27>#############
+[unary_expression->unary_operator •cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态27>#############
+
+##############<状态28>#############
+[primary_expression->IDENTIFIER•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态28>#############
+
+##############<状态29>#############
+[additive_expression->additive_expression •'-' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[additive_expression->additive_expression •'+' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[relational_expression->additive_expression•,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态29>#############
+
+##############<状态30>#############
+[direct_declarator->direct_declarator '[' constant_expression •']',[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态30>#############
+
+##############<状态31>#############
+[unary_expression->DEC_OP •unary_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态31>#############
+
+##############<状态32>#############
+[cast_expression->unary_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', assignment_operator, ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态32>#############
+
+##############<状态33>#############
+[equality_expression->relational_expression•,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •'>' additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •'<' additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •GE_OP additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •LE_OP additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态33>#############
+
+##############<状态34>#############
+[cast_expression->'(' •type_name ')' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', assignment_operator, '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[primary_expression->'(' •expression ')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态34>#############
+
+##############<状态35>#############
+[unary_expression->INC_OP •unary_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', assignment_operator, ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态35>#############
+
+##############<状态36>#############
+[exclusive_or_expression->exclusive_or_expression •'^' and_expression,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+[inclusive_or_expression->exclusive_or_expression•,[';', '?', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+--------------------------------------------
+
+##############</状态36>#############
+
+##############<状态37>#############
+[logical_and_expression->logical_and_expression •AND_OP inclusive_or_expression,[';', '?', ')', ']', OR_OP, ':', AND_OP, comma]]
+
+[logical_or_expression->logical_and_expression•,[';', '?', ')', ']', OR_OP, ':', comma]]
+
+--------------------------------------------
+
+##############</状态37>#############
+
+##############<状态38>#############
+[additive_expression->multiplicative_expression•,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'/' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'%' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'*' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态38>#############
+
+##############<状态39>#############
+[constant_expression->conditional_expression•,[']']]
+
+--------------------------------------------
+
+##############</状态39>#############
+
+##############<状态40>#############
+[conditional_expression->logical_or_expression•,[';', ')', ']', ':', comma]]
+
+[conditional_expression->logical_or_expression •'?' expression ':' conditional_expression,[';', ')', ']', ':', comma]]
+
+[logical_or_expression->logical_or_expression •OR_OP logical_and_expression,[';', '?', ')', ']', OR_OP, ':', comma]]
+
+--------------------------------------------
+
+##############</状态40>#############
+
+##############<状态41>#############
+[and_expression->and_expression •'&' equality_expression,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma, '&']]
+
+[exclusive_or_expression->and_expression•,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+--------------------------------------------
+
+##############</状态41>#############
+
+##############<状态42>#############
+[multiplicative_expression->cast_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态42>#############
+
+##############<状态43>#############
+[postfix_expression->primary_expression•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态43>#############
+
+##############<状态44>#############
+[primary_expression->CONSTANT•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态44>#############
+
+##############<状态45>#############
+[primary_expression->STRING_LITERAL•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态45>#############
+
+##############<状态46>#############
+[unary_expression->SIZEOF •'(' type_name ')',['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[unary_expression->SIZEOF •unary_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态46>#############
+
+##############<状态47>#############
+[direct_declarator->direct_declarator comma identifier_list•,[';', '[', comma, '=']]
+
+[identifier_list->identifier_list •comma IDENTIFIER,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态47>#############
+
+##############<状态48>#############
+[identifier_list->IDENTIFIER•,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态48>#############
+
+##############<状态49>#############
+[direct_declarator->type_specifier IDENTIFIER•,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态49>#############
+
+##############<状态50>#############
+[declaration->declarator '=' assignment_expression •';',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态50>#############
+
+##############<状态51>#############
+[assignment_expression->unary_expression •assignment_operator assignment_expression,[';', ')', ']', ':', comma]]
+
+[cast_expression->unary_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态51>#############
+
+##############<状态52>#############
+[assignment_expression->conditional_expression•,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+
+##############</状态52>#############
+
+##############<状态53>#############
+[function_definition->type_specifier IDENTIFIER '(' •parameter_list ')' compound_statement,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+[parameter_declaration->•type_specifier IDENTIFIER,[]]
+
+[parameter_list->•VOID,[]]
+
+[parameter_list->•parameter_list comma parameter_declaration,[]]
+
+[parameter_list->•parameter_declaration,[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+[type_specifier->•VOID,[]]
+
+
+##############</状态53>#############
+
+##############<状态54>#############
+[inclusive_or_expression->inclusive_or_expression '•,[';', '?', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+--------------------------------------------
+
+##############</状态54>#############
+
+##############<状态55>#############
+[postfix_expression->postfix_expression '.' •IDENTIFIER,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态55>#############
+
+##############<状态56>#############
+[postfix_expression->postfix_expression '(' •argument_expression_list ')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression '(' •')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[argument_expression_list->•argument_expression_list comma assignment_expression,[]]
+
+[argument_expression_list->•assignment_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态56>#############
+
+##############<状态57>#############
+[postfix_expression->postfix_expression INC_OP•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态57>#############
+
+##############<状态58>#############
+[postfix_expression->postfix_expression PTR_OP •IDENTIFIER,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态58>#############
+
+##############<状态59>#############
+[postfix_expression->postfix_expression '[' •expression ']',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态59>#############
+
+##############<状态60>#############
+[postfix_expression->postfix_expression DEC_OP•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态60>#############
+
+##############<状态61>#############
+[equality_expression->equality_expression NE_OP •relational_expression,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态61>#############
+
+##############<状态62>#############
+[equality_expression->equality_expression EQ_OP •relational_expression,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态62>#############
+
+##############<状态63>#############
+[postfix_expression->postfix_expression •DEC_OP,[]]
+
+[postfix_expression->postfix_expression •'(' argument_expression_list ')',[]]
+
+[postfix_expression->postfix_expression •PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->postfix_expression •'.' IDENTIFIER,[]]
+
+[postfix_expression->postfix_expression •'[' expression ']',[]]
+
+[postfix_expression->postfix_expression •INC_OP,[]]
+
+[postfix_expression->postfix_expression •'(' ')',[]]
+
+[unary_expression->postfix_expression•,[]]
+
+--------------------------------------------
+
+##############</状态63>#############
+
+##############<状态64>#############
+[unary_expression->unary_operator cast_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态64>#############
+
+##############<状态65>#############
+[additive_expression->additive_expression '-' •multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态65>#############
+
+##############<状态66>#############
+[additive_expression->additive_expression '+' •multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态66>#############
+
+##############<状态67>#############
+[direct_declarator->direct_declarator '[' constant_expression ']'•,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态67>#############
+
+##############<状态68>#############
+[unary_expression->DEC_OP unary_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态68>#############
+
+##############<状态69>#############
+[primary_expression->'(' •expression ')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态69>#############
+
+##############<状态70>#############
+[relational_expression->relational_expression LE_OP •additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态70>#############
+
+##############<状态71>#############
+[relational_expression->relational_expression GE_OP •additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态71>#############
+
+##############<状态72>#############
+[relational_expression->relational_expression '>' •additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态72>#############
+
+##############<状态73>#############
+[relational_expression->relational_expression '<' •additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态73>#############
+
+##############<状态74>#############
+[expression->expression •comma assignment_expression,[')', comma]]
+
+[primary_expression->'(' expression •')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态74>#############
+
+##############<状态75>#############
+[expression->assignment_expression•,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+
+##############</状态75>#############
+
+##############<状态76>#############
+[cast_expression->'(' type_name •')' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', assignment_operator, '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态76>#############
+
+##############<状态77>#############
+[unary_expression->INC_OP unary_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', assignment_operator, ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态77>#############
+
+##############<状态78>#############
+[exclusive_or_expression->exclusive_or_expression '^' •and_expression,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态78>#############
+
+##############<状态79>#############
+[logical_and_expression->logical_and_expression AND_OP •inclusive_or_expression,[';', '?', ')', ']', OR_OP, ':', AND_OP, comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态79>#############
+
+##############<状态80>#############
+[multiplicative_expression->multiplicative_expression '*' •cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态80>#############
+
+##############<状态81>#############
+[multiplicative_expression->multiplicative_expression '%' •cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态81>#############
+
+##############<状态82>#############
+[multiplicative_expression->multiplicative_expression '/' •cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态82>#############
+
+##############<状态83>#############
+[conditional_expression->logical_or_expression '?' •expression ':' conditional_expression,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态83>#############
+
+##############<状态84>#############
+[logical_or_expression->logical_or_expression OR_OP •logical_and_expression,[';', '?', ')', ']', OR_OP, ':', comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态84>#############
+
+##############<状态85>#############
+[and_expression->and_expression '&' •equality_expression,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma, '&']]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态85>#############
+
+##############<状态86>#############
+[unary_expression->SIZEOF unary_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态86>#############
+
+##############<状态87>#############
+[primary_expression->'(' •expression ')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[unary_expression->SIZEOF '(' •type_name ')',['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态87>#############
+
+##############<状态88>#############
+[identifier_list->identifier_list comma •IDENTIFIER,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态88>#############
+
+##############<状态89>#############
+[declaration->declarator '=' assignment_expression ';'•,[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态89>#############
+
+##############<状态90>#############
+[assignment_expression->unary_expression assignment_operator •assignment_expression,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态90>#############
+
+##############<状态91>#############
+[parameter_list->parameter_declaration•,[')', comma]]
+
+--------------------------------------------
+
+##############</状态91>#############
+
+##############<状态92>#############
+[function_definition->type_specifier IDENTIFIER '(' parameter_list •')' compound_statement,['*', CHAR, FLOAT, $, INT, VOID]]
+
+[parameter_list->parameter_list •comma parameter_declaration,[')', comma]]
+
+--------------------------------------------
+
+##############</状态92>#############
+
+##############<状态93>#############
+[parameter_list->VOID•,[')', comma]]
+
+[type_specifier->VOID•,[IDENTIFIER]]
+
+--------------------------------------------
+
+##############</状态93>#############
+
+##############<状态94>#############
+[parameter_declaration->type_specifier •IDENTIFIER,[')', comma]]
+
+--------------------------------------------
+
+##############</状态94>#############
+
+##############<状态95>#############
+[postfix_expression->postfix_expression '.' IDENTIFIER•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态95>#############
+
+##############<状态96>#############
+[argument_expression_list->assignment_expression•,[')', comma]]
+
+--------------------------------------------
+
+##############</状态96>#############
+
+##############<状态97>#############
+[postfix_expression->postfix_expression '(' ')'•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态97>#############
+
+##############<状态98>#############
+[argument_expression_list->argument_expression_list •comma assignment_expression,[')', comma]]
+
+[postfix_expression->postfix_expression '(' argument_expression_list •')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态98>#############
+
+##############<状态99>#############
+[postfix_expression->postfix_expression PTR_OP IDENTIFIER•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态99>#############
+
+##############<状态100>#############
+[expression->expression •comma assignment_expression,[']', comma]]
+
+[postfix_expression->postfix_expression '[' expression •']',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态100>#############
+
+##############<状态101>#############
+[postfix_expression->postfix_expression •DEC_OP,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression •'(' argument_expression_list ')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression •PTR_OP IDENTIFIER,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression •'.' IDENTIFIER,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression •INC_OP,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression •'[' expression ']',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[postfix_expression->postfix_expression •'(' ')',['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+[unary_expression->postfix_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', assignment_operator, ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态101>#############
+
+##############<状态102>#############
+[equality_expression->equality_expression NE_OP relational_expression•,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •'>' additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •'<' additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •GE_OP additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •LE_OP additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态102>#############
+
+##############<状态103>#############
+[equality_expression->equality_expression EQ_OP relational_expression•,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •'>' additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •'<' additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •GE_OP additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[relational_expression->relational_expression •LE_OP additive_expression,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态103>#############
+
+##############<状态104>#############
+[additive_expression->additive_expression '-' multiplicative_expression•,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'/' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'%' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'*' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态104>#############
+
+##############<状态105>#############
+[additive_expression->additive_expression '+' multiplicative_expression•,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'/' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'%' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+[multiplicative_expression->multiplicative_expression •'*' cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态105>#############
+
+##############<状态106>#############
+[additive_expression->additive_expression •'-' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[additive_expression->additive_expression •'+' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[relational_expression->relational_expression LE_OP additive_expression•,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态106>#############
+
+##############<状态107>#############
+[additive_expression->additive_expression •'-' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[additive_expression->additive_expression •'+' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[relational_expression->relational_expression GE_OP additive_expression•,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态107>#############
+
+##############<状态108>#############
+[additive_expression->additive_expression •'-' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[additive_expression->additive_expression •'+' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[relational_expression->relational_expression '>' additive_expression•,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态108>#############
+
+##############<状态109>#############
+[additive_expression->additive_expression •'-' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[additive_expression->additive_expression •'+' multiplicative_expression,['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]]
+
+[relational_expression->relational_expression '<' additive_expression•,['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态109>#############
+
+##############<状态110>#############
+[primary_expression->'(' expression ')'•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态110>#############
+
+##############<状态111>#############
+[expression->expression comma •assignment_expression,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态111>#############
+
+##############<状态112>#############
+[cast_expression->'(' type_name ')' •cast_expression,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', assignment_operator, '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态112>#############
+
+##############<状态113>#############
+[and_expression->and_expression •'&' equality_expression,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma, '&']]
+
+[exclusive_or_expression->exclusive_or_expression '^' and_expression•,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+--------------------------------------------
+
+##############</状态113>#############
+
+##############<状态114>#############
+[inclusive_or_expression->inclusive_or_expression •',[';', '?', ')', ']', OR_OP, ':', ', AND_OP, comma]]
+
+[logical_and_expression->logical_and_expression AND_OP inclusive_or_expression•,[';', '?', ')', ']', OR_OP, ':', AND_OP, comma]]
+
+--------------------------------------------
+
+##############</状态114>#############
+
+##############<状态115>#############
+[multiplicative_expression->multiplicative_expression '*' cast_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态115>#############
+
+##############<状态116>#############
+[multiplicative_expression->multiplicative_expression '%' cast_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态116>#############
+
+##############<状态117>#############
+[multiplicative_expression->multiplicative_expression '/' cast_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态117>#############
+
+##############<状态118>#############
+[conditional_expression->logical_or_expression '?' expression •':' conditional_expression,[';', ')', ']', ':', comma]]
+
+[expression->expression •comma assignment_expression,[':', comma]]
+
+--------------------------------------------
+
+##############</状态118>#############
+
+##############<状态119>#############
+[logical_and_expression->logical_and_expression •AND_OP inclusive_or_expression,[';', '?', ')', ']', OR_OP, ':', AND_OP, comma]]
+
+[logical_or_expression->logical_or_expression OR_OP logical_and_expression•,[';', '?', ')', ']', OR_OP, ':', comma]]
+
+--------------------------------------------
+
+##############</状态119>#############
+
+##############<状态120>#############
+[and_expression->and_expression '&' equality_expression•,[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma, '&']]
+
+[equality_expression->equality_expression •NE_OP relational_expression,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+[equality_expression->equality_expression •EQ_OP relational_expression,['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态120>#############
+
+##############<状态121>#############
+[unary_expression->SIZEOF '(' type_name •')',['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态121>#############
+
+##############<状态122>#############
+[identifier_list->identifier_list comma IDENTIFIER•,[';', '[', comma, '=']]
+
+--------------------------------------------
+
+##############</状态122>#############
+
+##############<状态123>#############
+[assignment_expression->unary_expression assignment_operator assignment_expression•,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+
+##############</状态123>#############
+
+##############<状态124>#############
+[function_definition->type_specifier IDENTIFIER '(' parameter_list ')' •compound_statement,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+
+##############</状态124>#############
+
+##############<状态125>#############
+[parameter_list->parameter_list comma •parameter_declaration,[')', comma]]
+
+--------------------------------------------
+[parameter_declaration->•type_specifier IDENTIFIER,[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+[type_specifier->•VOID,[]]
+
+
+##############</状态125>#############
+
+##############<状态126>#############
+[parameter_declaration->type_specifier IDENTIFIER•,[')', comma]]
+
+--------------------------------------------
+
+##############</状态126>#############
+
+##############<状态127>#############
+[postfix_expression->postfix_expression '(' argument_expression_list ')'•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态127>#############
+
+##############<状态128>#############
+[argument_expression_list->argument_expression_list comma •assignment_expression,[')', comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态128>#############
+
+##############<状态129>#############
+[postfix_expression->postfix_expression '[' expression ']'•,['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态129>#############
+
+##############<状态130>#############
+[expression->expression comma assignment_expression•,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+
+##############</状态130>#############
+
+##############<状态131>#############
+[cast_expression->'(' type_name ')' cast_expression•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', assignment_operator, '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态131>#############
+
+##############<状态132>#############
+[conditional_expression->logical_or_expression '?' expression ':' •conditional_expression,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+
+##############</状态132>#############
+
+##############<状态133>#############
+[unary_expression->SIZEOF '(' type_name ')'•,['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]]
+
+--------------------------------------------
+
+##############</状态133>#############
+
+##############<状态134>#############
+[compound_statement->'{' •'}',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[compound_statement->'{' •statement_list '}',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[compound_statement->'{' •declaration_list statement_list '}',[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[declaration->•declarator '=' assignment_expression ';',[]]
+
+[declaration->•declarator ';',[]]
+
+[declaration_list->•declaration,[]]
+
+[declaration_list->•declaration_list declaration,[]]
+
+[declarator->•direct_declarator,[]]
+
+[declarator->•pointer direct_declarator,[]]
+
+[direct_declarator->•direct_declarator '[' ']',[]]
+
+[direct_declarator->•direct_declarator comma identifier_list,[]]
+
+[direct_declarator->•type_specifier IDENTIFIER,[]]
+
+[direct_declarator->•direct_declarator '[' constant_expression ']',[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[pointer->•'*',[]]
+
+[pointer->•'*' pointer,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[statement_list->•statement_list statement,[]]
+
+[statement_list->•statement,[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•VOID,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态134>#############
+
+##############<状态135>#############
+[function_definition->type_specifier IDENTIFIER '(' parameter_list ')' compound_statement•,['*', CHAR, FLOAT, $, INT, VOID]]
+
+--------------------------------------------
+
+##############</状态135>#############
+
+##############<状态136>#############
+[parameter_list->parameter_list comma parameter_declaration•,[')', comma]]
+
+--------------------------------------------
+
+##############</状态136>#############
+
+##############<状态137>#############
+[argument_expression_list->argument_expression_list comma assignment_expression•,[')', comma]]
+
+--------------------------------------------
+
+##############</状态137>#############
+
+##############<状态138>#############
+[conditional_expression->logical_or_expression '?' expression ':' conditional_expression•,[';', ')', ']', ':', comma]]
+
+--------------------------------------------
+
+##############</状态138>#############
+
+##############<状态139>#############
+[expression->expression •comma assignment_expression,[';', comma]]
+
+[expression_statement->expression •';',[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, ')', '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态139>#############
+
+##############<状态140>#############
+[iteration_statement->FOR •'(' expression_statement expression_statement expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[iteration_statement->FOR •'(' expression_statement expression_statement ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态140>#############
+
+##############<状态141>#############
+[jump_statement->BREAK •';',[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态141>#############
+
+##############<状态142>#############
+[statement->compound_statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态142>#############
+
+##############<状态143>#############
+[expression_statement->';'•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, ')', '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态143>#############
+
+##############<状态144>#############
+[selection_statement->IF •'(' expression ')' statement ELSE statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[selection_statement->IF •'(' expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态144>#############
+
+##############<状态145>#############
+[jump_statement->RETURN •';',[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[jump_statement->RETURN •expression ';',[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态145>#############
+
+##############<状态146>#############
+[jump_statement->CONTINUE •';',[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态146>#############
+
+##############<状态147>#############
+[compound_statement->'{' statement_list •'}',[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[statement_list->statement_list •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态147>#############
+
+##############<状态148>#############
+[declaration_list->declaration•,[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, FLOAT, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态148>#############
+
+##############<状态149>#############
+[statement->selection_statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态149>#############
+
+##############<状态150>#############
+[iteration_statement->WHILE •'(' expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态150>#############
+
+##############<状态151>#############
+[statement_list->statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态151>#############
+
+##############<状态152>#############
+[compound_statement->'{' '}'•,[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态152>#############
+
+##############<状态153>#############
+[compound_statement->'{' declaration_list •statement_list '}',[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[declaration_list->declaration_list •declaration,[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, FLOAT, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[declaration->•declarator '=' assignment_expression ';',[]]
+
+[declaration->•declarator ';',[]]
+
+[declarator->•direct_declarator,[]]
+
+[declarator->•pointer direct_declarator,[]]
+
+[direct_declarator->•direct_declarator '[' ']',[]]
+
+[direct_declarator->•direct_declarator comma identifier_list,[]]
+
+[direct_declarator->•type_specifier IDENTIFIER,[]]
+
+[direct_declarator->•direct_declarator '[' constant_expression ']',[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[pointer->•'*',[]]
+
+[pointer->•'*' pointer,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[statement_list->•statement_list statement,[]]
+
+[statement_list->•statement,[]]
+
+[type_specifier->•FLOAT,[]]
+
+[type_specifier->•VOID,[]]
+
+[type_specifier->•INT,[]]
+
+[type_specifier->•CHAR,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态153>#############
+
+##############<状态154>#############
+[statement->expression_statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态154>#############
+
+##############<状态155>#############
+[statement->iteration_statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态155>#############
+
+##############<状态156>#############
+[statement->jump_statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态156>#############
+
+##############<状态157>#############
+[expression_statement->expression ';'•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, ')', '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态157>#############
+
+##############<状态158>#############
+[iteration_statement->FOR '(' •expression_statement expression_statement expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[iteration_statement->FOR '(' •expression_statement expression_statement ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态158>#############
+
+##############<状态159>#############
+[jump_statement->BREAK ';'•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态159>#############
+
+##############<状态160>#############
+[selection_statement->IF '(' •expression ')' statement ELSE statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[selection_statement->IF '(' •expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态160>#############
+
+##############<状态161>#############
+[expression->expression •comma assignment_expression,[';', comma]]
+
+[jump_statement->RETURN expression •';',[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态161>#############
+
+##############<状态162>#############
+[jump_statement->RETURN ';'•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态162>#############
+
+##############<状态163>#############
+[jump_statement->CONTINUE ';'•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态163>#############
+
+##############<状态164>#############
+[compound_statement->'{' statement_list '}'•,[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态164>#############
+
+##############<状态165>#############
+[statement_list->statement_list statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态165>#############
+
+##############<状态166>#############
+[iteration_statement->WHILE '(' •expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态166>#############
+
+##############<状态167>#############
+[compound_statement->'{' declaration_list statement_list •'}',[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[statement_list->statement_list •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态167>#############
+
+##############<状态168>#############
+[declaration_list->declaration_list declaration•,[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, FLOAT, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态168>#############
+
+##############<状态169>#############
+[iteration_statement->FOR '(' expression_statement •expression_statement expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[iteration_statement->FOR '(' expression_statement •expression_statement ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态169>#############
+
+##############<状态170>#############
+[expression->expression •comma assignment_expression,[')', comma]]
+
+[selection_statement->IF '(' expression •')' statement ELSE statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[selection_statement->IF '(' expression •')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态170>#############
+
+##############<状态171>#############
+[jump_statement->RETURN expression ';'•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态171>#############
+
+##############<状态172>#############
+[expression->expression •comma assignment_expression,[')', comma]]
+
+[iteration_statement->WHILE '(' expression •')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态172>#############
+
+##############<状态173>#############
+[compound_statement->'{' declaration_list statement_list '}'•,[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, '}', ELSE, FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态173>#############
+
+##############<状态174>#############
+[iteration_statement->FOR '(' expression_statement expression_statement •expression ')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[iteration_statement->FOR '(' expression_statement expression_statement •')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态174>#############
+
+##############<状态175>#############
+[selection_statement->IF '(' expression ')' •statement ELSE statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[selection_statement->IF '(' expression ')' •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态175>#############
+
+##############<状态176>#############
+[iteration_statement->WHILE '(' expression ')' •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态176>#############
+
+##############<状态177>#############
+[expression->expression •comma assignment_expression,[')', comma]]
+
+[iteration_statement->FOR '(' expression_statement expression_statement expression •')' statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态177>#############
+
+##############<状态178>#############
+[iteration_statement->FOR '(' expression_statement expression_statement ')' •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态178>#############
+
+##############<状态179>#############
+[selection_statement->IF '(' expression ')' statement •ELSE statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+[selection_statement->IF '(' expression ')' statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态179>#############
+
+##############<状态180>#############
+[iteration_statement->WHILE '(' expression ')' statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态180>#############
+
+##############<状态181>#############
+[iteration_statement->FOR '(' expression_statement expression_statement expression ')' •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态181>#############
+
+##############<状态182>#############
+[iteration_statement->FOR '(' expression_statement expression_statement ')' statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态182>#############
+
+##############<状态183>#############
+[selection_statement->IF '(' expression ')' statement ELSE •statement,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+[additive_expression->•multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '+' multiplicative_expression,[]]
+
+[additive_expression->•additive_expression '-' multiplicative_expression,[]]
+
+[and_expression->•equality_expression,[]]
+
+[and_expression->•and_expression '&' equality_expression,[]]
+
+[assignment_expression->•conditional_expression,[]]
+
+[assignment_expression->•unary_expression assignment_operator assignment_expression,[]]
+
+[cast_expression->•'(' type_name ')' cast_expression,[]]
+
+[cast_expression->•unary_expression,[]]
+
+[compound_statement->•'{' '}',[]]
+
+[compound_statement->•'{' statement_list '}',[]]
+
+[compound_statement->•'{' declaration_list statement_list '}',[]]
+
+[conditional_expression->•logical_or_expression,[]]
+
+[conditional_expression->•logical_or_expression '?' expression ':' conditional_expression,[]]
+
+[equality_expression->•equality_expression NE_OP relational_expression,[]]
+
+[equality_expression->•equality_expression EQ_OP relational_expression,[]]
+
+[equality_expression->•relational_expression,[]]
+
+[exclusive_or_expression->•exclusive_or_expression '^' and_expression,[]]
+
+[exclusive_or_expression->•and_expression,[]]
+
+[expression->•assignment_expression,[]]
+
+[expression->•expression comma assignment_expression,[]]
+
+[expression_statement->•expression ';',[]]
+
+[expression_statement->•';',[]]
+
+[inclusive_or_expression->•inclusive_or_expression ',[]]
+
+[inclusive_or_expression->•exclusive_or_expression,[]]
+
+[iteration_statement->•WHILE '(' expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement expression ')' statement,[]]
+
+[iteration_statement->•FOR '(' expression_statement expression_statement ')' statement,[]]
+
+[jump_statement->•BREAK ';',[]]
+
+[jump_statement->•RETURN ';',[]]
+
+[jump_statement->•RETURN expression ';',[]]
+
+[jump_statement->•CONTINUE ';',[]]
+
+[logical_and_expression->•logical_and_expression AND_OP inclusive_or_expression,[]]
+
+[logical_and_expression->•inclusive_or_expression,[]]
+
+[logical_or_expression->•logical_and_expression,[]]
+
+[logical_or_expression->•logical_or_expression OR_OP logical_and_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '%' cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '*' cast_expression,[]]
+
+[multiplicative_expression->•cast_expression,[]]
+
+[multiplicative_expression->•multiplicative_expression '/' cast_expression,[]]
+
+[postfix_expression->•postfix_expression '(' argument_expression_list ')',[]]
+
+[postfix_expression->•primary_expression,[]]
+
+[postfix_expression->•postfix_expression '[' expression ']',[]]
+
+[postfix_expression->•postfix_expression DEC_OP,[]]
+
+[postfix_expression->•postfix_expression '(' ')',[]]
+
+[postfix_expression->•postfix_expression '.' IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression PTR_OP IDENTIFIER,[]]
+
+[postfix_expression->•postfix_expression INC_OP,[]]
+
+[primary_expression->•IDENTIFIER,[]]
+
+[primary_expression->•STRING_LITERAL,[]]
+
+[primary_expression->•CONSTANT,[]]
+
+[primary_expression->•'(' expression ')',[]]
+
+[relational_expression->•relational_expression LE_OP additive_expression,[]]
+
+[relational_expression->•additive_expression,[]]
+
+[relational_expression->•relational_expression '<' additive_expression,[]]
+
+[relational_expression->•relational_expression '>' additive_expression,[]]
+
+[relational_expression->•relational_expression GE_OP additive_expression,[]]
+
+[selection_statement->•IF '(' expression ')' statement,[]]
+
+[selection_statement->•IF '(' expression ')' statement ELSE statement,[]]
+
+[statement->•expression_statement,[]]
+
+[statement->•jump_statement,[]]
+
+[statement->•selection_statement,[]]
+
+[statement->•compound_statement,[]]
+
+[statement->•iteration_statement,[]]
+
+[unary_expression->•SIZEOF unary_expression,[]]
+
+[unary_expression->•INC_OP unary_expression,[]]
+
+[unary_expression->•unary_operator cast_expression,[]]
+
+[unary_expression->•postfix_expression,[]]
+
+[unary_expression->•DEC_OP unary_expression,[]]
+
+[unary_expression->•SIZEOF '(' type_name ')',[]]
+
+
+##############</状态183>#############
+
+##############<状态184>#############
+[iteration_statement->FOR '(' expression_statement expression_statement expression ')' statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态184>#############
+
+##############<状态185>#############
+[selection_statement->IF '(' expression ')' statement ELSE statement•,[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', ELSE, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]]
+
+--------------------------------------------
+
+##############</状态185>#############

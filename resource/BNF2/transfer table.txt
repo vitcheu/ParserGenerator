@@ -1,0 +1,129 @@
+orgSize=0,curSize=1
+
+[program'->•program]                                             传播符号[$]                             	->	@17   	[program'->program•]                                             
+orgSize=9,curSize=10
+
+[program'->•program]                                             传播符号[$]                             	->	@6    	[program->external_declaration•]                                 
+orgSize=0,curSize=1
+
+[program'->•program]                                             传播符号[$]                             	->	@7    	[external_declaration->function_definition•]                     
+orgSize=0,curSize=1
+
+[program'->•program]                                             传播符号[$]                             	->	@9    	[external_declaration->declaration•]                             
+orgSize=0,curSize=1
+
+[program'->•program]                                             传播符号[$]                             	->	@4    	[declaration->init_declarator•]                                  
+orgSize=0,curSize=1
+
+[program'->•program]                                             传播符号[$]                             	->	@16   	[init_declarator->declarator•]                                   
+orgSize=2,curSize=3
+
+[program'->•program]                                             传播符号[$]                             	->	@14   	[declarator->direct_declarator•]                                 
+orgSize=1,curSize=2
+
+[program'->•program]                                             传播符号[$]                             	->	@24   	[direct_declarator->IDENTIFIER•]                                 
+orgSize=0,curSize=2
+
+[direct_declarator->direct_declarator’[‘ •‘]’]                   传播符号[’[’, $]                        	->	@23   	[direct_declarator->direct_declarator’[‘ ‘]’•]                   
+orgSize=0,curSize=2
+
+[direct_declarator->IDENTIFIER •'('')']                          传播符号[’[’, $]                        	->	@22   	[direct_declarator->IDENTIFIER '('')'•]                          
+orgSize=0,curSize=2
+
+[direct_declarator->direct_declarator‘ •’identifier_list]        传播符号[’[’, $]                        	->	@20   	[direct_declarator->direct_declarator‘ ’identifier_list•]        
+orgSize=0,curSize=3
+
+[declarator->pointer •direct_declarator]                         传播符号['{', $, '=']                   	->	@25   	[declarator->pointer direct_declarator•]                         
+orgSize=2,curSize=4
+
+[declarator->pointer •direct_declarator]                         传播符号['{', '=']                      	->	@24   	[direct_declarator->IDENTIFIER•]                                 
+orgSize=0,curSize=3
+
+[pointer->'*' •pointer]                                          传播符号[IDENTIFIER, direct_declarator’[‘, direct_declarator‘]	->	@19   	[pointer->'*' pointer•]                                          
+orgSize=2,curSize=4
+
+[direct_declarator->direct_declarator’[‘ •‘]’]                   传播符号['{', '=']                      	->	@23   	[direct_declarator->direct_declarator’[‘ ‘]’•]                   
+orgSize=2,curSize=4
+
+[direct_declarator->IDENTIFIER •'('')']                          传播符号['{', '=']                      	->	@22   	[direct_declarator->IDENTIFIER '('')'•]                          
+orgSize=2,curSize=4
+
+[direct_declarator->direct_declarator‘ •’identifier_list]        传播符号['{', '=']                      	->	@20   	[direct_declarator->direct_declarator‘ ’identifier_list•]        
+orgSize=0,curSize=10
+
+[program->program •external_declaration]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, $, init_declarator_list]	->	@29   	[program->program external_declaration•]                         
+orgSize=1,curSize=10
+
+[program->program •external_declaration]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, init_declarator_list]	->	@7    	[external_declaration->function_definition•]                     
+orgSize=1,curSize=10
+
+[program->program •external_declaration]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, init_declarator_list]	->	@9    	[external_declaration->declaration•]                             
+orgSize=1,curSize=10
+
+[program->program •external_declaration]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, init_declarator_list]	->	@4    	[declaration->init_declarator•]                                  
+orgSize=1,curSize=10
+
+[program->program •external_declaration]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, init_declarator_list]	->	@16   	[init_declarator->declarator•]                                   
+orgSize=3,curSize=12
+
+[program->program •external_declaration]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, init_declarator_list]	->	@14   	[declarator->direct_declarator•]                                 
+orgSize=4,curSize=13
+
+[program->program •external_declaration]                         传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, init_declarator_list]	->	@24   	[direct_declarator->IDENTIFIER•]                                 
+orgSize=3,curSize=12
+
+[declarator->pointer •direct_declarator]                         传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, init_declarator_list]	->	@25   	[declarator->pointer direct_declarator•]                         
+orgSize=4,curSize=13
+
+[direct_declarator->direct_declarator’[‘ •‘]’]                   传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, init_declarator_list]	->	@23   	[direct_declarator->direct_declarator’[‘ ‘]’•]                   
+orgSize=4,curSize=13
+
+[direct_declarator->IDENTIFIER •'('')']                          传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, init_declarator_list]	->	@22   	[direct_declarator->IDENTIFIER '('')'•]                          
+orgSize=4,curSize=13
+
+[direct_declarator->direct_declarator‘ •’identifier_list]        传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, init_declarator_list]	->	@20   	[direct_declarator->direct_declarator‘ ’identifier_list•]        
+orgSize=0,curSize=1
+
+[inclusive_or_expression->inclusive_or_expression •']            传播符号[']                             	->	@98   	[inclusive_or_expression->inclusive_or_expression '•]            
+orgSize=0,curSize=6
+
+[postfix_expression->postfix_expression •INC_OP]                 传播符号['.', '[', DEC_OP, PTR_OP, '(', INC_OP]	->	@92   	[postfix_expression->postfix_expression INC_OP•]                 
+orgSize=0,curSize=6
+
+[postfix_expression->postfix_expression •DEC_OP]                 传播符号['.', '[', DEC_OP, PTR_OP, '(', INC_OP]	->	@89   	[postfix_expression->postfix_expression DEC_OP•]                 
+orgSize=0,curSize=11
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, ’[’, $, init_declarator_list]	->	@59   	[conditional_expression->logical_or_expression•]                 
+orgSize=2,curSize=13
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, ’[’, $, init_declarator_list]	->	@63   	[logical_or_expression->logical_and_expression•]                 
+orgSize=1,curSize=12
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, ’[’, $, init_declarator_list]	->	@54   	[logical_and_expression->inclusive_or_expression•]               
+orgSize=1,curSize=12
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, ’[’, $, init_declarator_list]	->	@57   	[inclusive_or_expression->exclusive_or_expression•]              
+orgSize=1,curSize=12
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, ’[’, $, init_declarator_list]	->	@47   	[exclusive_or_expression->and_expression•]                       
+orgSize=1,curSize=12
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, ’[’, $, init_declarator_list]	->	@51   	[and_expression->equality_expression•]                           
+orgSize=2,curSize=13
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, ’[’, $, init_declarator_list]	->	@139  	[equality_expression->relational_expression•]                    
+orgSize=4,curSize=15
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, ’[’, $, init_declarator_list]	->	@43   	[relational_expression->shift_expression•]                       
+orgSize=2,curSize=13
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, ’[’, $, init_declarator_list]	->	@49   	[shift_expression->additive_expression•]                         
+orgSize=2,curSize=13
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, ’[’, $, init_declarator_list]	->	@38   	[additive_expression->multiplicative_expression•]                
+orgSize=3,curSize=13
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号[direct_declarator‘, CHAR, INT, VOID, FLOAT, IDENTIFIER, direct_declarator’[‘, ’[’, $, init_declarator_list]	->	@64   	[multiplicative_expression->cast_expression•]                    
+orgSize=0,curSize=11
+
+[direct_declarator->direct_declarator ’[’ •constant_expression ’]’]传播符号['*', IDENTIFIER, direct_declarator’[‘, direct_declarator‘, CHAR, INT, VOID, FLOAT, ’[’, $, init_declarator_list]	->	@45   	[cast_expression->unary_expression•]                             

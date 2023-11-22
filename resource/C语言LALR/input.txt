@@ -1,0 +1,1 @@
+int  ID ( void  ) { int ID ;  ID + NUM * NUM ; return ID ; }

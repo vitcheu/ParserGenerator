@@ -1,0 +1,1637 @@
+
+##############<状态0>#############
+[program'->•program,[$]]
+
+--------------------------------------------
+[declaration->•var_declaration,[]]
+
+[declaration->•fun_declaration,[]]
+
+[declaration_list->•declaration,[]]
+
+[declaration_list->•declaration_list declaration,[]]
+
+[fun_declaration->•type_specifier ID ( params ) compound_stmt,[]]
+
+[program->•declaration_list,[]]
+
+[type_specifier->•char,[]]
+
+[type_specifier->•double,[]]
+
+[type_specifier->•float,[]]
+
+[type_specifier->•int,[]]
+
+[var_declaration->•type_specifier ID ;,[]]
+
+[var_declaration->•type_specifier ID [ NUM ] ;,[]]
+
+
+##############</状态0>#############
+
+##############<状态1>#############
+[fun_declaration->type_specifier •ID ( params ) compound_stmt,[$, double, char, float, int]]
+
+[var_declaration->type_specifier •ID ;,[$, double, char, float, int]]
+
+[var_declaration->type_specifier •ID [ NUM ] ;,[$, double, char, float, int]]
+
+--------------------------------------------
+
+##############</状态1>#############
+
+##############<状态2>#############
+[type_specifier->double•,[ID]]
+
+--------------------------------------------
+
+##############</状态2>#############
+
+##############<状态3>#############
+[declaration_list->declaration•,[$, double, char, float, int]]
+
+--------------------------------------------
+
+##############</状态3>#############
+
+##############<状态4>#############
+[declaration->fun_declaration•,[$, double, char, float, int]]
+
+--------------------------------------------
+
+##############</状态4>#############
+
+##############<状态5>#############
+[type_specifier->char•,[ID]]
+
+--------------------------------------------
+
+##############</状态5>#############
+
+##############<状态6>#############
+[program'->program•,[]]
+
+--------------------------------------------
+
+##############</状态6>#############
+
+##############<状态7>#############
+[type_specifier->float•,[ID]]
+
+--------------------------------------------
+
+##############</状态7>#############
+
+##############<状态8>#############
+[declaration->var_declaration•,[$, double, char, float, int]]
+
+--------------------------------------------
+
+##############</状态8>#############
+
+##############<状态9>#############
+[declaration_list->declaration_list •declaration,[$, double, char, float, int]]
+
+[program->declaration_list•,[$]]
+
+--------------------------------------------
+[declaration->•fun_declaration,[]]
+
+[declaration->•var_declaration,[]]
+
+[fun_declaration->•type_specifier ID ( params ) compound_stmt,[]]
+
+[type_specifier->•double,[]]
+
+[type_specifier->•char,[]]
+
+[type_specifier->•float,[]]
+
+[type_specifier->•int,[]]
+
+[var_declaration->•type_specifier ID ;,[]]
+
+[var_declaration->•type_specifier ID [ NUM ] ;,[]]
+
+
+##############</状态9>#############
+
+##############<状态10>#############
+[type_specifier->int•,[ID]]
+
+--------------------------------------------
+
+##############</状态10>#############
+
+##############<状态11>#############
+[fun_declaration->type_specifier ID •( params ) compound_stmt,[]]
+
+[var_declaration->type_specifier ID •;,[]]
+
+[var_declaration->type_specifier ID •[ NUM ] ;,[]]
+
+--------------------------------------------
+
+##############</状态11>#############
+
+##############<状态12>#############
+[declaration_list->declaration_list declaration•,[]]
+
+--------------------------------------------
+
+##############</状态12>#############
+
+##############<状态13>#############
+[var_declaration->type_specifier ID [ •NUM ] ;,[]]
+
+--------------------------------------------
+
+##############</状态13>#############
+
+##############<状态14>#############
+[fun_declaration->type_specifier ID ( •params ) compound_stmt,[]]
+
+--------------------------------------------
+[param->•type_specifier ID [ ],[]]
+
+[param->•type_specifier ID,[]]
+
+[param_list->•param_list comma param,[]]
+
+[param_list->•param,[]]
+
+[params->•void,[]]
+
+[params->•param_list,[]]
+
+[type_specifier->•double,[]]
+
+[type_specifier->•char,[]]
+
+[type_specifier->•float,[]]
+
+[type_specifier->•int,[]]
+
+
+##############</状态14>#############
+
+##############<状态15>#############
+[var_declaration->type_specifier ID ;•,[]]
+
+--------------------------------------------
+
+##############</状态15>#############
+
+##############<状态16>#############
+[var_declaration->type_specifier ID [ NUM •] ;,[]]
+
+--------------------------------------------
+
+##############</状态16>#############
+
+##############<状态17>#############
+[param_list->param_list •comma param,[]]
+
+[params->param_list•,[]]
+
+--------------------------------------------
+
+##############</状态17>#############
+
+##############<状态18>#############
+[param->type_specifier •ID [ ],[]]
+
+[param->type_specifier •ID,[]]
+
+--------------------------------------------
+
+##############</状态18>#############
+
+##############<状态19>#############
+[param_list->param•,[]]
+
+--------------------------------------------
+
+##############</状态19>#############
+
+##############<状态20>#############
+[params->void•,[]]
+
+--------------------------------------------
+
+##############</状态20>#############
+
+##############<状态21>#############
+[fun_declaration->type_specifier ID ( params •) compound_stmt,[]]
+
+--------------------------------------------
+
+##############</状态21>#############
+
+##############<状态22>#############
+[var_declaration->type_specifier ID [ NUM ] •;,[]]
+
+--------------------------------------------
+
+##############</状态22>#############
+
+##############<状态23>#############
+[param_list->param_list comma •param,[]]
+
+--------------------------------------------
+[param->•type_specifier ID [ ],[]]
+
+[param->•type_specifier ID,[]]
+
+[type_specifier->•double,[]]
+
+[type_specifier->•char,[]]
+
+[type_specifier->•float,[]]
+
+[type_specifier->•int,[]]
+
+
+##############</状态23>#############
+
+##############<状态24>#############
+[param->type_specifier ID•,[]]
+
+[param->type_specifier ID •[ ],[]]
+
+--------------------------------------------
+
+##############</状态24>#############
+
+##############<状态25>#############
+[fun_declaration->type_specifier ID ( params ) •compound_stmt,[]]
+
+--------------------------------------------
+[compound_stmt->•{ local_declarations statement_list },[]]
+
+
+##############</状态25>#############
+
+##############<状态26>#############
+[var_declaration->type_specifier ID [ NUM ] ;•,[]]
+
+--------------------------------------------
+
+##############</状态26>#############
+
+##############<状态27>#############
+[param_list->param_list comma param•,[]]
+
+--------------------------------------------
+
+##############</状态27>#############
+
+##############<状态28>#############
+[param->type_specifier ID [ •],[]]
+
+--------------------------------------------
+
+##############</状态28>#############
+
+##############<状态29>#############
+[fun_declaration->type_specifier ID ( params ) compound_stmt•,[]]
+
+--------------------------------------------
+
+##############</状态29>#############
+
+##############<状态30>#############
+[compound_stmt->{ •local_declarations statement_list },[]]
+
+[local_declarations-•,[]]
+
+--------------------------------------------
+[local_declarations->•local_declarations var_declaration,[]]
+
+
+##############</状态30>#############
+
+##############<状态31>#############
+[param->type_specifier ID [ ]•,[]]
+
+--------------------------------------------
+
+##############</状态31>#############
+
+##############<状态32>#############
+[compound_stmt->{ local_declarations •statement_list },[]]
+
+[local_declarations->local_declarations •var_declaration,[]]
+
+--------------------------------------------
+[additive_expression->•term,[]]
+
+[additive_expression->•additive_expression addop term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[compound_stmt->•{ local_declarations statement_list },[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[expression_stmt->•expression ;,[]]
+
+[expression_stmt->•;,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[iteration_stmt->•for ( expression ; expression ; expression ),[]]
+
+[iteration_stmt->•while ( expression ) statement,[]]
+
+[return_stmt->•return expression ;,[]]
+
+[return_stmt->•return ;,[]]
+
+[selection_stmt->•if ( expression ) statement,[]]
+
+[selection_stmt->•if ( expression ) statement else statement,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[statement->•selection_stmt,[]]
+
+[statement->•iteration_stmt,[]]
+
+[statement->•compound_stmt,[]]
+
+[statement->•return_stmt,[]]
+
+[statement->•expression_stmt,[]]
+
+[statement_list->•statement,[]]
+
+[statement_list->•statement statement_list,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[type_specifier->•char,[]]
+
+[type_specifier->•double,[]]
+
+[type_specifier->•float,[]]
+
+[type_specifier->•int,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+[var_declaration->•type_specifier ID [ NUM ] ;,[]]
+
+[var_declaration->•type_specifier ID ;,[]]
+
+
+##############</状态32>#############
+
+##############<状态33>#############
+[var_declaration->type_specifier •ID ;,[]]
+
+[var_declaration->type_specifier •ID [ NUM ] ;,[]]
+
+--------------------------------------------
+
+##############</状态33>#############
+
+##############<状态34>#############
+[factor->( •expression ),[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态34>#############
+
+##############<状态35>#############
+[return_stmt->return •expression ;,[]]
+
+[return_stmt->return •;,[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态35>#############
+
+##############<状态36>#############
+[expression_stmt->expression •;,[]]
+
+--------------------------------------------
+
+##############</状态36>#############
+
+##############<状态37>#############
+[term->factor•,[]]
+
+--------------------------------------------
+
+##############</状态37>#############
+
+##############<状态38>#############
+[iteration_stmt->for •( expression ; expression ; expression ),[]]
+
+--------------------------------------------
+
+##############</状态38>#############
+
+##############<状态39>#############
+[additive_expression->additive_expression •addop term,[]]
+
+[simple_expression->additive_expression•,[]]
+
+[simple_expression->additive_expression •relop additive_expression,[]]
+
+--------------------------------------------
+[addop->•+,[]]
+
+[addop->•-,[]]
+
+[relop->•!=,[]]
+
+[relop->•==,[]]
+
+[relop->•>=,[]]
+
+[relop->•>,[]]
+
+[relop->•<,[]]
+
+[relop->•<=,[]]
+
+
+##############</状态39>#############
+
+##############<状态40>#############
+[statement->iteration_stmt•,[]]
+
+--------------------------------------------
+
+##############</状态40>#############
+
+##############<状态41>#############
+[compound_stmt->{ local_declarations statement_list •},[]]
+
+--------------------------------------------
+
+##############</状态41>#############
+
+##############<状态42>#############
+[statement->return_stmt•,[]]
+
+--------------------------------------------
+
+##############</状态42>#############
+
+##############<状态43>#############
+[factor->call•,[]]
+
+--------------------------------------------
+
+##############</状态43>#############
+
+##############<状态44>#############
+[expression->simple_expression•,[]]
+
+--------------------------------------------
+
+##############</状态44>#############
+
+##############<状态45>#############
+[call->ID •( arg_list ),[]]
+
+[var->ID•,[]]
+
+[var->ID •[ expression ],[]]
+
+--------------------------------------------
+
+##############</状态45>#############
+
+##############<状态46>#############
+[statement_list->statement•,[]]
+
+[statement_list->statement •statement_list,[]]
+
+--------------------------------------------
+[additive_expression->•term,[]]
+
+[additive_expression->•additive_expression addop term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[compound_stmt->•{ local_declarations statement_list },[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[expression_stmt->•expression ;,[]]
+
+[expression_stmt->•;,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[iteration_stmt->•for ( expression ; expression ; expression ),[]]
+
+[iteration_stmt->•while ( expression ) statement,[]]
+
+[return_stmt->•return expression ;,[]]
+
+[return_stmt->•return ;,[]]
+
+[selection_stmt->•if ( expression ) statement,[]]
+
+[selection_stmt->•if ( expression ) statement else statement,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[statement->•selection_stmt,[]]
+
+[statement->•iteration_stmt,[]]
+
+[statement->•compound_stmt,[]]
+
+[statement->•return_stmt,[]]
+
+[statement->•expression_stmt,[]]
+
+[statement_list->•statement,[]]
+
+[statement_list->•statement statement_list,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态46>#############
+
+##############<状态47>#############
+[expression_stmt->;•,[]]
+
+--------------------------------------------
+
+##############</状态47>#############
+
+##############<状态48>#############
+[local_declarations->local_declarations var_declaration•,[]]
+
+--------------------------------------------
+
+##############</状态48>#############
+
+##############<状态49>#############
+[expression->var •= expression,[]]
+
+[factor->var•,[]]
+
+--------------------------------------------
+
+##############</状态49>#############
+
+##############<状态50>#############
+[statement->expression_stmt•,[]]
+
+--------------------------------------------
+
+##############</状态50>#############
+
+##############<状态51>#############
+[iteration_stmt->while •( expression ) statement,[]]
+
+--------------------------------------------
+
+##############</状态51>#############
+
+##############<状态52>#############
+[selection_stmt->if •( expression ) statement,[]]
+
+[selection_stmt->if •( expression ) statement else statement,[]]
+
+--------------------------------------------
+
+##############</状态52>#############
+
+##############<状态53>#############
+[factor->NUM•,[]]
+
+--------------------------------------------
+
+##############</状态53>#############
+
+##############<状态54>#############
+[statement->compound_stmt•,[]]
+
+--------------------------------------------
+
+##############</状态54>#############
+
+##############<状态55>#############
+[statement->selection_stmt•,[]]
+
+--------------------------------------------
+
+##############</状态55>#############
+
+##############<状态56>#############
+[additive_expression->term•,[]]
+
+[term->term •mulop factor,[]]
+
+--------------------------------------------
+[mulop->•/,[]]
+
+[mulop->•*,[]]
+
+
+##############</状态56>#############
+
+##############<状态57>#############
+[var_declaration->type_specifier ID •;,[]]
+
+[var_declaration->type_specifier ID •[ NUM ] ;,[]]
+
+--------------------------------------------
+
+##############</状态57>#############
+
+##############<状态58>#############
+[factor->( expression •),[]]
+
+--------------------------------------------
+
+##############</状态58>#############
+
+##############<状态59>#############
+[return_stmt->return ;•,[]]
+
+--------------------------------------------
+
+##############</状态59>#############
+
+##############<状态60>#############
+[return_stmt->return expression •;,[]]
+
+--------------------------------------------
+
+##############</状态60>#############
+
+##############<状态61>#############
+[expression_stmt->expression ;•,[]]
+
+--------------------------------------------
+
+##############</状态61>#############
+
+##############<状态62>#############
+[iteration_stmt->for ( •expression ; expression ; expression ),[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态62>#############
+
+##############<状态63>#############
+[simple_expression->additive_expression relop •additive_expression,[]]
+
+--------------------------------------------
+[additive_expression->•term,[]]
+
+[additive_expression->•additive_expression addop term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[factor->•var,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态63>#############
+
+##############<状态64>#############
+[relop->==•,[]]
+
+--------------------------------------------
+
+##############</状态64>#############
+
+##############<状态65>#############
+[relop-><=•,[]]
+
+--------------------------------------------
+
+##############</状态65>#############
+
+##############<状态66>#############
+[addop->+•,[]]
+
+--------------------------------------------
+
+##############</状态66>#############
+
+##############<状态67>#############
+[relop->>•,[]]
+
+--------------------------------------------
+
+##############</状态67>#############
+
+##############<状态68>#############
+[relop->>=•,[]]
+
+--------------------------------------------
+
+##############</状态68>#############
+
+##############<状态69>#############
+[addop->-•,[]]
+
+--------------------------------------------
+
+##############</状态69>#############
+
+##############<状态70>#############
+[relop-><•,[]]
+
+--------------------------------------------
+
+##############</状态70>#############
+
+##############<状态71>#############
+[relop->!=•,[]]
+
+--------------------------------------------
+
+##############</状态71>#############
+
+##############<状态72>#############
+[additive_expression->additive_expression addop •term,[]]
+
+--------------------------------------------
+[call->•ID ( arg_list ),[]]
+
+[factor->•var,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态72>#############
+
+##############<状态73>#############
+[compound_stmt->{ local_declarations statement_list }•,[]]
+
+--------------------------------------------
+
+##############</状态73>#############
+
+##############<状态74>#############
+[var->ID [ •expression ],[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态74>#############
+
+##############<状态75>#############
+[call->ID ( •arg_list ),[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[arg_list->•expression,[]]
+
+[arg_list->•arg_list comma expression,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态75>#############
+
+##############<状态76>#############
+[statement_list->statement statement_list•,[]]
+
+--------------------------------------------
+
+##############</状态76>#############
+
+##############<状态77>#############
+[expression->var = •expression,[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态77>#############
+
+##############<状态78>#############
+[iteration_stmt->while ( •expression ) statement,[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态78>#############
+
+##############<状态79>#############
+[selection_stmt->if ( •expression ) statement,[]]
+
+[selection_stmt->if ( •expression ) statement else statement,[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态79>#############
+
+##############<状态80>#############
+[mulop->*•,[]]
+
+--------------------------------------------
+
+##############</状态80>#############
+
+##############<状态81>#############
+[term->term mulop •factor,[]]
+
+--------------------------------------------
+[call->•ID ( arg_list ),[]]
+
+[factor->•var,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态81>#############
+
+##############<状态82>#############
+[mulop->/•,[]]
+
+--------------------------------------------
+
+##############</状态82>#############
+
+##############<状态83>#############
+[factor->( expression )•,[]]
+
+--------------------------------------------
+
+##############</状态83>#############
+
+##############<状态84>#############
+[return_stmt->return expression ;•,[]]
+
+--------------------------------------------
+
+##############</状态84>#############
+
+##############<状态85>#############
+[iteration_stmt->for ( expression •; expression ; expression ),[]]
+
+--------------------------------------------
+
+##############</状态85>#############
+
+##############<状态86>#############
+[factor->var•,[]]
+
+--------------------------------------------
+
+##############</状态86>#############
+
+##############<状态87>#############
+[additive_expression->additive_expression •addop term,[]]
+
+[simple_expression->additive_expression relop additive_expression•,[]]
+
+--------------------------------------------
+[addop->•+,[]]
+
+[addop->•-,[]]
+
+
+##############</状态87>#############
+
+##############<状态88>#############
+[additive_expression->additive_expression addop term•,[]]
+
+[term->term •mulop factor,[]]
+
+--------------------------------------------
+[mulop->•/,[]]
+
+[mulop->•*,[]]
+
+
+##############</状态88>#############
+
+##############<状态89>#############
+[var->ID [ expression •],[]]
+
+--------------------------------------------
+
+##############</状态89>#############
+
+##############<状态90>#############
+[arg_list->arg_list •comma expression,[]]
+
+[call->ID ( arg_list •),[]]
+
+--------------------------------------------
+
+##############</状态90>#############
+
+##############<状态91>#############
+[arg_list->expression•,[]]
+
+--------------------------------------------
+
+##############</状态91>#############
+
+##############<状态92>#############
+[expression->var = expression•,[]]
+
+--------------------------------------------
+
+##############</状态92>#############
+
+##############<状态93>#############
+[iteration_stmt->while ( expression •) statement,[]]
+
+--------------------------------------------
+
+##############</状态93>#############
+
+##############<状态94>#############
+[selection_stmt->if ( expression •) statement else statement,[]]
+
+[selection_stmt->if ( expression •) statement,[]]
+
+--------------------------------------------
+
+##############</状态94>#############
+
+##############<状态95>#############
+[term->term mulop factor•,[]]
+
+--------------------------------------------
+
+##############</状态95>#############
+
+##############<状态96>#############
+[iteration_stmt->for ( expression ; •expression ; expression ),[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态96>#############
+
+##############<状态97>#############
+[var->ID [ expression ]•,[]]
+
+--------------------------------------------
+
+##############</状态97>#############
+
+##############<状态98>#############
+[call->ID ( arg_list )•,[]]
+
+--------------------------------------------
+
+##############</状态98>#############
+
+##############<状态99>#############
+[arg_list->arg_list comma •expression,[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态99>#############
+
+##############<状态100>#############
+[iteration_stmt->while ( expression ) •statement,[]]
+
+--------------------------------------------
+[additive_expression->•term,[]]
+
+[additive_expression->•additive_expression addop term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[compound_stmt->•{ local_declarations statement_list },[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[expression_stmt->•expression ;,[]]
+
+[expression_stmt->•;,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[iteration_stmt->•for ( expression ; expression ; expression ),[]]
+
+[iteration_stmt->•while ( expression ) statement,[]]
+
+[return_stmt->•return expression ;,[]]
+
+[return_stmt->•return ;,[]]
+
+[selection_stmt->•if ( expression ) statement,[]]
+
+[selection_stmt->•if ( expression ) statement else statement,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[statement->•selection_stmt,[]]
+
+[statement->•iteration_stmt,[]]
+
+[statement->•compound_stmt,[]]
+
+[statement->•return_stmt,[]]
+
+[statement->•expression_stmt,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态100>#############
+
+##############<状态101>#############
+[selection_stmt->if ( expression ) •statement else statement,[]]
+
+[selection_stmt->if ( expression ) •statement,[]]
+
+--------------------------------------------
+[additive_expression->•term,[]]
+
+[additive_expression->•additive_expression addop term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[compound_stmt->•{ local_declarations statement_list },[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[expression_stmt->•expression ;,[]]
+
+[expression_stmt->•;,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[iteration_stmt->•for ( expression ; expression ; expression ),[]]
+
+[iteration_stmt->•while ( expression ) statement,[]]
+
+[return_stmt->•return expression ;,[]]
+
+[return_stmt->•return ;,[]]
+
+[selection_stmt->•if ( expression ) statement,[]]
+
+[selection_stmt->•if ( expression ) statement else statement,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[statement->•selection_stmt,[]]
+
+[statement->•iteration_stmt,[]]
+
+[statement->•compound_stmt,[]]
+
+[statement->•return_stmt,[]]
+
+[statement->•expression_stmt,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态101>#############
+
+##############<状态102>#############
+[iteration_stmt->for ( expression ; expression •; expression ),[]]
+
+--------------------------------------------
+
+##############</状态102>#############
+
+##############<状态103>#############
+[arg_list->arg_list comma expression•,[]]
+
+--------------------------------------------
+
+##############</状态103>#############
+
+##############<状态104>#############
+[iteration_stmt->while ( expression ) statement•,[]]
+
+--------------------------------------------
+
+##############</状态104>#############
+
+##############<状态105>#############
+[selection_stmt->if ( expression ) statement •else statement,[]]
+
+[selection_stmt->if ( expression ) statement•,[]]
+
+--------------------------------------------
+
+##############</状态105>#############
+
+##############<状态106>#############
+[iteration_stmt->for ( expression ; expression ; •expression ),[]]
+
+--------------------------------------------
+[additive_expression->•additive_expression addop term,[]]
+
+[additive_expression->•term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态106>#############
+
+##############<状态107>#############
+[selection_stmt->if ( expression ) statement else •statement,[]]
+
+--------------------------------------------
+[additive_expression->•term,[]]
+
+[additive_expression->•additive_expression addop term,[]]
+
+[call->•ID ( arg_list ),[]]
+
+[compound_stmt->•{ local_declarations statement_list },[]]
+
+[expression->•simple_expression,[]]
+
+[expression->•var = expression,[]]
+
+[expression_stmt->•expression ;,[]]
+
+[expression_stmt->•;,[]]
+
+[factor->•call,[]]
+
+[factor->•NUM,[]]
+
+[factor->•( expression ),[]]
+
+[factor->•var,[]]
+
+[iteration_stmt->•for ( expression ; expression ; expression ),[]]
+
+[iteration_stmt->•while ( expression ) statement,[]]
+
+[return_stmt->•return expression ;,[]]
+
+[return_stmt->•return ;,[]]
+
+[selection_stmt->•if ( expression ) statement,[]]
+
+[selection_stmt->•if ( expression ) statement else statement,[]]
+
+[simple_expression->•additive_expression,[]]
+
+[simple_expression->•additive_expression relop additive_expression,[]]
+
+[statement->•selection_stmt,[]]
+
+[statement->•iteration_stmt,[]]
+
+[statement->•compound_stmt,[]]
+
+[statement->•return_stmt,[]]
+
+[statement->•expression_stmt,[]]
+
+[term->•factor,[]]
+
+[term->•term mulop factor,[]]
+
+[var->•ID,[]]
+
+[var->•ID [ expression ],[]]
+
+
+##############</状态107>#############
+
+##############<状态108>#############
+[iteration_stmt->for ( expression ; expression ; expression •),[]]
+
+--------------------------------------------
+
+##############</状态108>#############
+
+##############<状态109>#############
+[selection_stmt->if ( expression ) statement else statement•,[]]
+
+--------------------------------------------
+
+##############</状态109>#############
+
+##############<状态110>#############
+[iteration_stmt->for ( expression ; expression ; expression )•,[]]
+
+--------------------------------------------
+
+##############</状态110>#############

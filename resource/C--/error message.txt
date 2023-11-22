@@ -1,0 +1,2 @@
+
+在[@3  ,   union]	中发生冲突,冲突项为: 	shift to 14                   和	reduced storage	->	           

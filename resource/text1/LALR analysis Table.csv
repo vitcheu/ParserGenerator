@@ -1,0 +1,8 @@
+State,$,a,b,c,d,S,A,
+0,err,r4,s2,r4,err,1,3,
+1,acc,err,err,err,s4,err,err,
+2,r1,err,err,err,r1,err,err,
+3,err,s5,err,s6,err,err,err,
+4,err,r3,err,r3,err,err,err,
+5,r0,err,err,err,r0,err,err,
+6,err,r2,err,r2,err,err,err,

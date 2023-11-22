@@ -1,0 +1,12 @@
+orgSize=0,curSize=1
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@9    [program->declaration_list•]                                                         
+orgSize=4,curSize=5
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@3    [declaration_list->declaration•]                                                     
+orgSize=4,curSize=5
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@8    [declaration->var_declaration•]                                                      
+orgSize=4,curSize=5
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@4    [declaration->fun_declaration•]                                                      

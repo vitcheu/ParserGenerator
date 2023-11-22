@@ -1,0 +1,4 @@
+
+在[@47 ,   comma]	中发生冲突,冲突项为: 	shift to 88                   和	reduced direct_declarator	->	direct_declarator	comma	identifier_list	
+
+在[@179,    ELSE]	中发生冲突,冲突项为: 	shift to 183                  和	reduced selection_statement	->	IF	'('	expression	')'	statement	

@@ -1,0 +1,264 @@
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@1    [program'->program•]                                                                 
+orgSize=0,curSize=1
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@10   [program->external_declaration•]                                                     
+orgSize=5,curSize=6
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@9    [external_declaration->function_definition•]                                         
+orgSize=5,curSize=6
+
+@0    [program'->•program]                                                                 传播符号[$]                                                                             	->	@4    [external_declaration->declaration•]                                                 
+orgSize=5,curSize=6
+
+@18   [direct_declarator->type_specifier •IDENTIFIER]                                      传播符号['[', comma]                                                                    	->	@49   [direct_declarator->type_specifier IDENTIFIER•]                                      
+orgSize=0,curSize=2
+
+@3    [declarator->pointer •direct_declarator]                                             传播符号[';', '=']                                                                      	->	@17   [declarator->pointer direct_declarator•]                                             
+orgSize=0,curSize=2
+
+@8    [pointer->'*' •pointer]                                                              传播符号[CHAR, FLOAT, INT, VOID]                                                        	->	@19   [pointer->'*' pointer•]                                                              
+orgSize=0,curSize=4
+
+@13   [direct_declarator->type_specifier •IDENTIFIER]                                      传播符号[';', '[', comma, '=']                                                          	->	@22   [direct_declarator->type_specifier IDENTIFIER•]                                      
+orgSize=0,curSize=4
+
+@1    [program->program •external_declaration]                                             传播符号['*', CHAR, FLOAT, $, INT, VOID]                                                	->	@14   [program->program external_declaration•]                                             
+orgSize=0,curSize=6
+
+@12   [declaration->declarator •';']                                                       传播符号['*', CHAR, FLOAT, $, INT, VOID]                                                	->	@20   [declaration->declarator ';'•]                                                       
+orgSize=0,curSize=6
+
+@15   [direct_declarator->direct_declarator '[' •']']                                      传播符号[';', '[', comma, '=']                                                          	->	@25   [direct_declarator->direct_declarator '[' ']'•]                                      
+orgSize=0,curSize=4
+
+@23   [inclusive_or_expression->inclusive_or_expression •']                                传播符号[';', '?', ')', ']', OR_OP, ':', ', AND_OP, comma]                              	->	@54   [inclusive_or_expression->inclusive_or_expression '•]                                
+orgSize=0,curSize=9
+
+@101  [postfix_expression->postfix_expression •INC_OP]                                     传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@57   [postfix_expression->postfix_expression INC_OP•]                                     
+orgSize=0,curSize=29
+
+@101  [postfix_expression->postfix_expression •DEC_OP]                                     传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@60   [postfix_expression->postfix_expression DEC_OP•]                                     
+orgSize=0,curSize=29
+
+@35   [unary_expression->INC_OP •unary_expression]                                         传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', assignment_operator, ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@77   [unary_expression->INC_OP unary_expression•]                                         
+orgSize=0,curSize=23
+
+@31   [unary_expression->DEC_OP •unary_expression]                                         传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@68   [unary_expression->DEC_OP unary_expression•]                                         
+orgSize=0,curSize=23
+
+@27   [unary_expression->unary_operator •cast_expression]                                  传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@64   [unary_expression->unary_operator cast_expression•]                                  
+orgSize=0,curSize=23
+
+@27   [unary_expression->unary_operator •cast_expression]                                  传播符号[':', assignment_operator, ';', ')', comma]                                     	->	@32   [cast_expression->unary_expression•]                                                 
+orgSize=18,curSize=23
+
+@46   [unary_expression->SIZEOF •unary_expression]                                         传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@86   [unary_expression->SIZEOF unary_expression•]                                         
+orgSize=0,curSize=23
+
+@16   [direct_declarator->direct_declarator comma •identifier_list]                        传播符号[';', '[', comma, '=']                                                          	->	@47   [direct_declarator->direct_declarator comma identifier_list•]                        
+orgSize=0,curSize=4
+
+@16   [direct_declarator->direct_declarator comma •identifier_list]                        传播符号[';', '[', '=']                                                                 	->	@48   [identifier_list->IDENTIFIER•]                                                       
+orgSize=1,curSize=4
+
+@18   [direct_declarator->type_specifier •IDENTIFIER]                                      传播符号[';', '=']                                                                      	->	@49   [direct_declarator->type_specifier IDENTIFIER•]                                      
+orgSize=2,curSize=4
+
+@84   [logical_or_expression->logical_or_expression OR_OP •logical_and_expression]         传播符号[';', '?', ')', ']', OR_OP, ':', comma]                                         	->	@119  [logical_or_expression->logical_or_expression OR_OP logical_and_expression•]         
+orgSize=0,curSize=7
+
+@79   [logical_and_expression->logical_and_expression AND_OP •inclusive_or_expression]     传播符号[';', '?', ')', ']', OR_OP, ':', AND_OP, comma]                                 	->	@114  [logical_and_expression->logical_and_expression AND_OP inclusive_or_expression•]     
+orgSize=0,curSize=8
+
+@78   [exclusive_or_expression->exclusive_or_expression '^' •and_expression]               传播符号[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma]                         	->	@113  [exclusive_or_expression->exclusive_or_expression '^' and_expression•]               
+orgSize=0,curSize=10
+
+@85   [and_expression->and_expression '&' •equality_expression]                            传播符号[';', '?', '^', ')', ']', OR_OP, ':', ', AND_OP, comma, '&']                    	->	@120  [and_expression->and_expression '&' equality_expression•]                            
+orgSize=0,curSize=11
+
+@62   [equality_expression->equality_expression EQ_OP •relational_expression]              传播符号['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]      	->	@103  [equality_expression->equality_expression EQ_OP relational_expression•]              
+orgSize=0,curSize=13
+
+@61   [equality_expression->equality_expression NE_OP •relational_expression]              传播符号['^', ']', ':', ', AND_OP, ';', '?', ')', NE_OP, OR_OP, comma, '&', EQ_OP]      	->	@102  [equality_expression->equality_expression NE_OP relational_expression•]              
+orgSize=0,curSize=13
+
+@73   [relational_expression->relational_expression '<' •additive_expression]              传播符号['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]	->	@109  [relational_expression->relational_expression '<' additive_expression•]              
+orgSize=0,curSize=17
+
+@72   [relational_expression->relational_expression '>' •additive_expression]              传播符号['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]	->	@108  [relational_expression->relational_expression '>' additive_expression•]              
+orgSize=0,curSize=17
+
+@70   [relational_expression->relational_expression LE_OP •additive_expression]            传播符号['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]	->	@106  [relational_expression->relational_expression LE_OP additive_expression•]            
+orgSize=0,curSize=17
+
+@71   [relational_expression->relational_expression GE_OP •additive_expression]            传播符号['^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', EQ_OP]	->	@107  [relational_expression->relational_expression GE_OP additive_expression•]            
+orgSize=0,curSize=17
+
+@66   [additive_expression->additive_expression '+' •multiplicative_expression]            传播符号['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]	->	@105  [additive_expression->additive_expression '+' multiplicative_expression•]            
+orgSize=0,curSize=19
+
+@65   [additive_expression->additive_expression '-' •multiplicative_expression]            传播符号['-', '^', ']', GE_OP, ':', ', AND_OP, '>', '<', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '+', EQ_OP]	->	@104  [additive_expression->additive_expression '-' multiplicative_expression•]            
+orgSize=0,curSize=19
+
+@80   [multiplicative_expression->multiplicative_expression '*' •cast_expression]          传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@115  [multiplicative_expression->multiplicative_expression '*' cast_expression•]          
+orgSize=0,curSize=22
+
+@82   [multiplicative_expression->multiplicative_expression '/' •cast_expression]          传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@117  [multiplicative_expression->multiplicative_expression '/' cast_expression•]          
+orgSize=0,curSize=22
+
+@81   [multiplicative_expression->multiplicative_expression '%' •cast_expression]          传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@116  [multiplicative_expression->multiplicative_expression '%' cast_expression•]          
+orgSize=0,curSize=22
+
+@56   [postfix_expression->postfix_expression '(' •')']                                    传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@97   [postfix_expression->postfix_expression '(' ')'•]                                    
+orgSize=0,curSize=29
+
+@55   [postfix_expression->postfix_expression '.' •IDENTIFIER]                             传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@95   [postfix_expression->postfix_expression '.' IDENTIFIER•]                             
+orgSize=0,curSize=29
+
+@58   [postfix_expression->postfix_expression PTR_OP •IDENTIFIER]                          传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@99   [postfix_expression->postfix_expression PTR_OP IDENTIFIER•]                          
+orgSize=0,curSize=29
+
+@111  [expression->expression comma •assignment_expression]                                传播符号[')', ']', ':', comma]                                                          	->	@130  [expression->expression comma assignment_expression•]                                
+orgSize=0,curSize=4
+
+@90   [assignment_expression->unary_expression assignment_operator •assignment_expression] 传播符号[';', ')', ']', ':', comma]                                                     	->	@123  [assignment_expression->unary_expression assignment_operator assignment_expression•] 
+orgSize=0,curSize=5
+
+@74   [primary_expression->'(' expression •')']                                            传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@110  [primary_expression->'(' expression ')'•]                                            
+orgSize=0,curSize=29
+
+@30   [direct_declarator->direct_declarator '[' constant_expression •']']                  传播符号[';', '[', comma, '=']                                                          	->	@67   [direct_declarator->direct_declarator '[' constant_expression ']'•]                  
+orgSize=0,curSize=4
+
+@88   [identifier_list->identifier_list comma •IDENTIFIER]                                 传播符号[comma]                                                                         	->	@122  [identifier_list->identifier_list comma IDENTIFIER•]                                 
+orgSize=0,curSize=1
+
+@94   [parameter_declaration->type_specifier •IDENTIFIER]                                  传播符号[')', comma]                                                                    	->	@126  [parameter_declaration->type_specifier IDENTIFIER•]                                  
+orgSize=0,curSize=2
+
+@50   [declaration->declarator '=' assignment_expression •';']                             传播符号['*', CHAR, FLOAT, $, INT, VOID]                                                	->	@89   [declaration->declarator '=' assignment_expression ';'•]                             
+orgSize=0,curSize=6
+
+@112  [cast_expression->'(' type_name ')' •cast_expression]                                传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@131  [cast_expression->'(' type_name ')' cast_expression•]                                
+orgSize=0,curSize=22
+
+@100  [postfix_expression->postfix_expression '[' expression •']']                         传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@129  [postfix_expression->postfix_expression '[' expression ']'•]                         
+orgSize=0,curSize=29
+
+@128  [argument_expression_list->argument_expression_list comma •assignment_expression]    传播符号[')', comma]                                                                    	->	@137  [argument_expression_list->argument_expression_list comma assignment_expression•]    
+orgSize=0,curSize=2
+
+@98   [postfix_expression->postfix_expression '(' argument_expression_list •')']           传播符号['-', GE_OP, '%', ':', AND_OP, '.', '*', ';', '(', INC_OP, ')', OR_OP, '/', '^', ']', PTR_OP, ', '>', DEC_OP, '<', assignment_operator, '?', NE_OP, LE_OP, '[', comma, '&', '+', EQ_OP]	->	@127  [postfix_expression->postfix_expression '(' argument_expression_list ')'•]           
+orgSize=0,curSize=29
+
+@121  [unary_expression->SIZEOF '(' type_name •')']                                        传播符号['-', '^', ']', GE_OP, '%', ':', ', AND_OP, '>', '<', assignment_operator, '*', ';', '?', ')', NE_OP, LE_OP, OR_OP, comma, '&', '/', '+', EQ_OP]	->	@133  [unary_expression->SIZEOF '(' type_name ')'•]                                        
+orgSize=0,curSize=23
+
+@88   [identifier_list->identifier_list comma •IDENTIFIER]                                 传播符号[';', '[', '=']                                                                 	->	@122  [identifier_list->identifier_list comma IDENTIFIER•]                                 
+orgSize=1,curSize=4
+
+@125  [parameter_list->parameter_list comma •parameter_declaration]                        传播符号[')', comma]                                                                    	->	@136  [parameter_list->parameter_list comma parameter_declaration•]                        
+orgSize=0,curSize=2
+
+@132  [conditional_expression->logical_or_expression '?' expression ':' •conditional_expression]传播符号[';', ')', ']', ':', comma]                                                     	->	@138  [conditional_expression->logical_or_expression '?' expression ':' conditional_expression•]
+orgSize=0,curSize=5
+
+@112  [cast_expression->'(' type_name ')' •cast_expression]                                传播符号[assignment_operator]                                                           	->	@131  [cast_expression->'(' type_name ')' cast_expression•]                                
+orgSize=22,curSize=23
+
+@124  [function_definition->type_specifier IDENTIFIER '(' parameter_list ')' •compound_statement]传播符号['*', CHAR, FLOAT, $, INT, VOID]                                                	->	@135  [function_definition->type_specifier IDENTIFIER '(' parameter_list ')' compound_statement•]
+orgSize=0,curSize=6
+
+@134  [compound_statement->'{' •'}']                                                       传播符号[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@152  [compound_statement->'{' '}'•]                                                       
+orgSize=0,curSize=23
+
+@147  [statement_list->statement_list •statement]                                          传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@165  [statement_list->statement_list statement•]                                          
+orgSize=0,curSize=17
+
+@153  [declaration_list->declaration_list •declaration]                                    传播符号[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, FLOAT, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@168  [declaration_list->declaration_list declaration•]                                    
+orgSize=0,curSize=21
+
+@12   [declaration->declarator •';']                                                       传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@20   [declaration->declarator ';'•]                                                       
+orgSize=6,curSize=22
+
+@139  [expression_statement->expression •';']                                              传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@157  [expression_statement->expression ';'•]                                              
+orgSize=0,curSize=17
+
+@146  [jump_statement->CONTINUE •';']                                                      传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@163  [jump_statement->CONTINUE ';'•]                                                      
+orgSize=0,curSize=17
+
+@141  [jump_statement->BREAK •';']                                                         传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@159  [jump_statement->BREAK ';'•]                                                         
+orgSize=0,curSize=17
+
+@145  [jump_statement->RETURN •';']                                                        传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@162  [jump_statement->RETURN ';'•]                                                        
+orgSize=0,curSize=17
+
+@111  [expression->expression comma •assignment_expression]                                传播符号[';']                                                                           	->	@130  [expression->expression comma assignment_expression•]                                
+orgSize=4,curSize=5
+
+@147  [compound_statement->'{' statement_list •'}']                                        传播符号[CONTINUE, CHAR, unary_operator, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, '*', ';', '(', INC_OP, IF, '}', FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@164  [compound_statement->'{' statement_list '}'•]                                        
+orgSize=0,curSize=23
+
+@161  [jump_statement->RETURN expression •';']                                             传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@171  [jump_statement->RETURN expression ';'•]                                             
+orgSize=0,curSize=17
+
+@50   [declaration->declarator '=' assignment_expression •';']                             传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@89   [declaration->declarator '=' assignment_expression ';'•]                             
+orgSize=6,curSize=22
+
+@167  [compound_statement->'{' declaration_list statement_list •'}']                       传播符号[CONTINUE, unary_operator, CHAR, IDENTIFIER, FOR, INT, VOID, '{', DEC_OP, BREAK, ';', '*', '(', INC_OP, IF, '}', FLOAT, $, WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@173  [compound_statement->'{' declaration_list statement_list '}'•]                       
+orgSize=0,curSize=23
+
+@139  [expression_statement->expression •';']                                              传播符号[')', ELSE]                                                                     	->	@157  [expression_statement->expression ';'•]                                              
+orgSize=17,curSize=19
+
+@175  [selection_statement->IF '(' expression ')' •statement]                              传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@179  [selection_statement->IF '(' expression ')' statement•]                              
+orgSize=0,curSize=17
+
+@134  [compound_statement->'{' •'}']                                                       传播符号[ELSE]                                                                          	->	@152  [compound_statement->'{' '}'•]                                                       
+orgSize=23,curSize=24
+
+@146  [jump_statement->CONTINUE •';']                                                      传播符号[ELSE]                                                                          	->	@163  [jump_statement->CONTINUE ';'•]                                                      
+orgSize=17,curSize=18
+
+@141  [jump_statement->BREAK •';']                                                         传播符号[ELSE]                                                                          	->	@159  [jump_statement->BREAK ';'•]                                                         
+orgSize=17,curSize=18
+
+@145  [jump_statement->RETURN •';']                                                        传播符号[ELSE]                                                                          	->	@162  [jump_statement->RETURN ';'•]                                                        
+orgSize=17,curSize=18
+
+@176  [iteration_statement->WHILE '(' expression ')' •statement]                           传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@180  [iteration_statement->WHILE '(' expression ')' statement•]                           
+orgSize=0,curSize=17
+
+@147  [compound_statement->'{' statement_list •'}']                                        传播符号[ELSE]                                                                          	->	@164  [compound_statement->'{' statement_list '}'•]                                        
+orgSize=23,curSize=24
+
+@161  [jump_statement->RETURN expression •';']                                             传播符号[ELSE]                                                                          	->	@171  [jump_statement->RETURN expression ';'•]                                             
+orgSize=17,curSize=18
+
+@178  [iteration_statement->FOR '(' expression_statement expression_statement ')' •statement]传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@182  [iteration_statement->FOR '(' expression_statement expression_statement ')' statement•]
+orgSize=0,curSize=17
+
+@167  [compound_statement->'{' declaration_list statement_list •'}']                       传播符号[ELSE]                                                                          	->	@173  [compound_statement->'{' declaration_list statement_list '}'•]                       
+orgSize=23,curSize=24
+
+@183  [selection_statement->IF '(' expression ')' statement ELSE •statement]               传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@185  [selection_statement->IF '(' expression ')' statement ELSE statement•]               
+orgSize=0,curSize=17
+
+@181  [iteration_statement->FOR '(' expression_statement expression_statement expression ')' •statement]传播符号[CONTINUE, unary_operator, IDENTIFIER, FOR, '{', DEC_OP, BREAK, ';', '(', INC_OP, IF, '}', WHILE, CONSTANT, STRING_LITERAL, SIZEOF, RETURN]	->	@184  [iteration_statement->FOR '(' expression_statement expression_statement expression ')' statement•]
+orgSize=0,curSize=17
+
+@175  [selection_statement->IF '(' expression ')' •statement]                              传播符号[ELSE]                                                                          	->	@179  [selection_statement->IF '(' expression ')' statement•]                              
+orgSize=17,curSize=18
+
+@176  [iteration_statement->WHILE '(' expression ')' •statement]                           传播符号[ELSE]                                                                          	->	@180  [iteration_statement->WHILE '(' expression ')' statement•]                           
+orgSize=17,curSize=18
+
+@178  [iteration_statement->FOR '(' expression_statement expression_statement ')' •statement]传播符号[ELSE]                                                                          	->	@182  [iteration_statement->FOR '(' expression_statement expression_statement ')' statement•]
+orgSize=17,curSize=18
+
+@183  [selection_statement->IF '(' expression ')' statement ELSE •statement]               传播符号[ELSE]                                                                          	->	@185  [selection_statement->IF '(' expression ')' statement ELSE statement•]               
+orgSize=17,curSize=18
+
+@181  [iteration_statement->FOR '(' expression_statement expression_statement expression ')' •statement]传播符号[ELSE]                                                                          	->	@184  [iteration_statement->FOR '(' expression_statement expression_statement expression ')' statement•]
+orgSize=17,curSize=18

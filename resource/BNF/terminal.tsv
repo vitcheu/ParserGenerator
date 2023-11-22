@@ -1,0 +1,9 @@
+IDENTIFIER	'('	')'	VOID	CHAR	INT	
+FLOAT	'*'	'['	']'	comma	'{'	
+'}'	';'	'='	IF	ELSE	WHILE	
+FOR	CONTINUE	BREAK	RETURN	assignment_operator	'?'	
+':'	OR_OP	AND_OP	'	'^'	'&'	
+EQ_OP	NE_OP	'<'	'>'	LE_OP	GE_OP	
+'+'	'-'	'/'	'%'	type_name	INC_OP	
+DEC_OP	unary_operator	SIZEOF	'.'	PTR_OP	CONSTANT	
+STRING_LITERAL	

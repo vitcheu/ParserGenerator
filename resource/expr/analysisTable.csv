@@ -1,0 +1,8 @@
+,num,+,-,*,/,(,),$,
+E,error,E	->	T E2 ,error,error,error,error,E	->	T E2 ,error,
+T,error,T	->	F T2 ,error,error,error,error,T	->	F T2 ,error,
+F,error,F	->	num ,error,error,error,error,F	->	( E ) ,error,
+E2,E2	->	,error,E2	->	E3 E2 ,E2	->	E3 E2 ,error,error,error,E2	->	,
+E3,error,error,E3	->	+ T ,E3	->	- T ,error,error,error,error,
+T2,T2	->	,error,T2	->	,T2	->	,T2	->	T3 T2 ,T2	->	T3 T2 ,error,T2	->	,
+T3,error,error,error,error,T3	->	* F ,T3	->	/ F ,error,error,
