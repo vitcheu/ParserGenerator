@@ -31,7 +31,7 @@ public class Generator {
 
 
     public static void main(String[] args) {
-        Generator generator = new LRGenerator("parser/");
+        Generator generator = new LRGenerator("C--/");
 
         //构造语法分析表
         generator.readGrammar("grammar.csv");
