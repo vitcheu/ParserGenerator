@@ -20,9 +20,7 @@ public class Generator {
     public static final int DEFAULT = Integer.MIN_VALUE;
     protected NonTerminal start;
     protected final String path;
-    public final String workingDir
-//            ="";
-            ="D:/Code/CmmCompiler/";
+    public final String workingDir ="";
     public final String tsvSplit = "\t";
     public final String comma=",";
     public PrintStream err = System.err;
